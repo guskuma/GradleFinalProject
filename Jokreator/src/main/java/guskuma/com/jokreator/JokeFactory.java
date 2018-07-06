@@ -12,21 +12,22 @@ public class JokeFactory {
     private Iterator<String> it;
 
     private JokeFactory(){
-        jokesList.add("A professora chega para o Joãozinho e diz: <br/>" +
-                "- Joãozinho qual é o tempo da frase: Eu procuro um homem fiel? <br/>" +
-                " E então Joãozinho responde: <br/>" +
-                "- É tempo perdido!<br/>");
+        jokesList.add("A professora chega para o Joãozinho e diz: \r\n" +
+                "- Joãozinho qual é o tempo da frase: \n" +
+                "Eu procuro um homem fiel? \r\n" +
+                " E então Joãozinho responde: \r\n" +
+                "- É tempo perdido!\r\n");
 
-        jokesList.add("Joãozinho chamou o pai no meio da noite e disse: <br/>" +
-                "- Pai, tem muitos mosquitos no meu quarto! <br/>" +
-                "- Apague a luz que eles vão embora, filhote! — diz o pai, carinhosamente. <br/>" +
-                "Logo depois apareceu um vaga-lume. O menino chamou o pai outra vez: <br/>" +
+        jokesList.add("Joãozinho chamou o pai no meio da noite e disse: \r\n" +
+                "- Pai, tem muitos mosquitos no meu quarto! \r\n" +
+                "- Apague a luz que eles vão embora, filhote! — diz o pai, carinhosamente. \r\n" +
+                "Logo depois apareceu um vaga-lume. O menino chamou o pai outra vez: \r\n" +
                 "- Pai, socorro! Agora os mosquitos estão vindo com lanternas!");
 
-        jokesList.add("Joãozinho chega em casa e diz: <br/>" +
-                "- Mãe, eu descobri que sou mais inteligente que a professora. <br/>" +
-                "E a mãe diz: <br/>" +
-                "- Por que você acha isso? <br/>" +
+        jokesList.add("Joãozinho chega em casa e diz: \r\n" +
+                "- Mãe, eu descobri que sou mais inteligente que a professora. \r\n" +
+                "E a mãe diz: \r\n" +
+                "- Por que você acha isso? \r\n" +
                 "- Porque eu passei de ano e ela continuou no mesmo.");
 
         it = jokesList.iterator();
