@@ -13,18 +13,13 @@ import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import java.io.IOException;
 
-public class EndpointsAsyncTask extends AsyncTaskLoader<String> {
+public class EndpointsAsyncTaskLoader extends AsyncTaskLoader<String> {
 
     public static final int TASK_ID = 249187;
     private static MyApi myApiService;
 
-    public EndpointsAsyncTask(@NonNull Context context) {
+    public EndpointsAsyncTaskLoader(@NonNull Context context) {
         super(context);
-    }
-
-    @Nullable
-    @Override
-    public String loadInBackground() {
 
         MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                 new AndroidJsonFactory(), null)
@@ -34,10 +29,16 @@ public class EndpointsAsyncTask extends AsyncTaskLoader<String> {
                     public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException {
                         abstractGoogleClientRequest.setDisableGZipContent(true);
                     }
-                });
+                })
+                .setApplicationName("GradleFinalProject");
 
 
         myApiService = builder.build();
+    }
+
+    @Nullable
+    @Override
+    public String loadInBackground() {
 
         try {
             return myApiService.getJoke().execute().getData();

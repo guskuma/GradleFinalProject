@@ -27,8 +27,6 @@ public class MainActivityFragment extends Fragment implements LoaderManager.Load
     public MainActivityFragment() {
     }
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -50,7 +48,7 @@ public class MainActivityFragment extends Fragment implements LoaderManager.Load
             }
         });
 
-        mLoader = getLoaderManager().initLoader(EndpointsAsyncTask.TASK_ID, null, this);
+        mLoader = getLoaderManager().initLoader(EndpointsAsyncTaskLoader.TASK_ID, null, this);
 
         return root;
     }
@@ -59,7 +57,7 @@ public class MainActivityFragment extends Fragment implements LoaderManager.Load
     @NonNull
     @Override
     public Loader<String> onCreateLoader(int i, @Nullable Bundle bundle) {
-        return new EndpointsAsyncTask(getActivity());
+        return new EndpointsAsyncTaskLoader(getActivity());
     }
 
     @Override
