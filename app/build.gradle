@@ -13,9 +13,9 @@ buildscript {
 android {
     compileSdkVersion 26
     buildToolsVersion '27.0.3'
+    flavorDimensions "versionCode"
 
     defaultConfig {
-        applicationId "com.udacity.gradle.builditbigger"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
@@ -31,6 +31,15 @@ android {
         }
     }
 
+    productFlavors{
+        free {
+            applicationId "com.udacity.gradle.builditbigger.free"
+        }
+        paid {
+            applicationId "com.udacity.gradle.builditbigger.paid"
+        }
+    }
+
     configurations.all {
         resolutionStrategy.force 'com.android.support:support-annotations:26.1.0'
     }
@@ -43,11 +52,12 @@ dependencies {
     implementation project(':jokeactivities')
 
     implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.google.android.gms:play-services-ads:15.0.1'
     implementation 'com.google.api-client:google-api-client:1.23.0'
     implementation 'com.google.http-client:google-http-client-android:1.23.0'
     implementation 'com.google.code.findbugs:jsr305:3.0.1'
     implementation 'com.android.support:support-annotations:26.1.0'
+
+    freeImplementation 'com.google.android.gms:play-services-ads:15.0.1'
 
     testImplementation 'junit:junit:4.12'
 
