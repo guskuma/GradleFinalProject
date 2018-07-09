@@ -19,3 +19,15 @@ allprojects {
         google()
     }
 }
+
+task "testeIntegradoEndpointApp" {
+    description "Teste integrado da conexão endpoint - app"
+    group "android"
+
+    dependsOn ':backend:appengineStart'
+    finalizedBy ':backend:appengineStop'
+
+    doLast {
+        ':app:connectedAndroidTest'
+    }
+}
